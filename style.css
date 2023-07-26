@@ -1,0 +1,6 @@
+.vertical-header {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  white-space: nowrap;
+  height: 100px;
+}
