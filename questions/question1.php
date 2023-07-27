@@ -4,19 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trabalho PHP</title>
+  <title>Questão 1</title>
+  <style>
+    fieldset {
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 0.8px;
+    }
+  </style>
 </head>
 
-<body style="display: flex; flex-direction: column;">
-  <h1>Trabalho PHP</h1>
+<body>
+  <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
+  <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 01</h3>
   <main>
     <form action="question1.php" method="get">
       <fieldset>
 
-        <legend>Critérios para avaliação</legend>
+        <legend>Critérios para geração</legend>
 
         <p>Quantidade de elementos
-          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>" onchange="this.form.submit()"> 
+          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>" onchange="this.form.submit()">
           <label for="qnte">(1 a 15)</label>
         </p>
 
@@ -41,8 +50,9 @@
       </fieldset>
     </form>
 
-    <?php
+    <hr>
 
+    <?php
     function marcado($value)
     {
       if (isset($_GET['criterio']) && $_GET['criterio'] === $value) {
