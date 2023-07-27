@@ -16,7 +16,7 @@
         <legend>Critérios para avaliação</legend>
 
         <p>Quantidade de elementos
-          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>">
+          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>" onchange="this.form.submit()"> 
           <label for="qnte">(1 a 15)</label>
         </p>
 
@@ -42,24 +42,32 @@
     </form>
 
     <?php
-    //Mantém o radio button marcado
+
     function marcado($value)
     {
-      $criterio = $_GET['criterio'];
-      if ($criterio === $value) {
+      if (isset($_GET['criterio']) && $_GET['criterio'] === $value) {
         echo "checked";
-      } else {
-        echo "";
       }
     }
 
     //Mantém o número da lista de seleção
     function selecionado()
     {
-      $nmr = $_GET['qntdelementos'];
-      echo "$nmr";
+      if (isset($_GET['qntdelementos'])) {
+        return $_GET['qntdelementos'];
+      } else {
+        return 1;
+      }
     }
 
+    // Se a página foi iniciada pela primeira vez, definindo os valores padrão
+    if (!isset($_GET['criterio'])) {
+      $qntdelementos = selecionado();
+      $criterio = 'text'; // Critério padrão, pode ser qualquer valor desejado.
+    } else {
+      $qntdelementos = $_GET['qntdelementos'];
+      $criterio = $_GET['criterio'];
+    }
 
     #region Ifs para cada radion button
     //Text
@@ -127,12 +135,7 @@
     }
     #endregion
 
-    if (isset($_GET['criterio']) && isset($_GET['qntdelementos'])) {
-      $criterio = $_GET['criterio'];
-      $qntdelementos = $_GET['qntdelementos'];
-      echo "<input type=\"hidden\" name=\"criterio\" value=\"{$_GET['criterio']}\">";
-    }
-
+    #region Códigos em texto para aparecer na tela
     //Código da textbox
     if (isset($_GET['criterio']) && isset($_GET['qntdelementos'])) {
       $criterio = $_GET['criterio'];
@@ -140,7 +143,7 @@
         $text = array(); // Cria um array para armazenar os códigos em texto
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
-          $text[] = '<input type="text" name="text' . $i . '" id="text' . $i . '">';
+          $text[] = '<input type="text" name="text' . $i . '" id="text' . $i . '"><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -159,7 +162,7 @@
         $password = array(); // Cria um array para armazenar os códigos em texto
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
-          $password[] = '<input type="password" name="senha' . $i . '" id="senha' . $i . '">';
+          $password[] = '<input type="password" name="senha' . $i . '" id="senha' . $i . '"><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -178,7 +181,7 @@
         $button = array(); // Cria um array para armazenar os códigos em texto
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
-          $button[] = '<input type="button" name="botao' . $i . '" id="botao' . $i . '">';
+          $button[] = '<input type="button" name="botao' . $i . '" id="botao' . $i . '"><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -197,7 +200,7 @@
         $radio = array(); // Cria um array para armazenar os códigos em texto
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
-          $radio[] = '<input type="radio" name="botao' . $i . '" id="radio' . $i . '"> <label for="radio' . $i . '">Radio ' . $i . '</label>';
+          $radio[] = '<input type="radio" name="botao' . $i . '" id="radio' . $i . '"> <label for="radio' . $i . '">Radio ' . $i . '</label><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -216,7 +219,7 @@
         $checkbox = array(); // Cria um array para armazenar os códigos em texto
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
-          $checkbox[] = '<input type="checkbox" name="checkbox' . $i . '" id="checkbox' . $i . '" value="checkbox' . $i . '> <label for="checkbox' . $i . '">Caixa de Seleção ' . $i . '</label>';
+          $checkbox[] = '<input type="checkbox" name="checkbox' . $i . '" id="checkbox' . $i . '" value="checkbox' . $i . '"> <label for="checkbox' . $i . '">Caixa de Seleção ' . $i . '</label><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -236,7 +239,7 @@
 
         for ($i = 1; $i <= $qntdelementos; $i++) {
           $value = 6.7 * $i;
-          $range[] = '<input type="range" name="range' . $i . '"id="range' . $i . '" min="0" " max="100" " value="' . $value . '> <label for="range' . $i . '">Faixa ' . $i . '</label>';
+          $range[] = '<input type="range" name="range' . $i . '"id="range' . $i . '" min="0" max="100" value="' . $value . '"> <label for="range' . $i . '">Faixa ' . $i . '</label><br>';
         }
 
         // Exibe o código PHP na tela usando htmlspecialchars
@@ -247,6 +250,7 @@
         echo "</pre>";
       }
     }
+    #endregion
 
     ?>
 
