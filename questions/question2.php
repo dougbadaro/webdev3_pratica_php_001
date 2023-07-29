@@ -73,7 +73,7 @@
   </style>
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; justify-content: space-between;">
   <?php
   $compositionTable = [];
 
@@ -112,30 +112,34 @@
     }
   }
   ?>
-  <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
-  <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 02</h3>
+  <div>
+    <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
+    <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 02</h3>
 
-  <table style="width: 100%; padding: 30px;">
-    <tr>
-      <th></th>
+    <table style="width: 100%; padding: 30px;">
+      <tr>
+        <th></th>
+        <?php
+        for ($x = 46; $x <= 120; $x++) {
+          echo '<th style="writing-mode: vertical-rl; transform: rotate(180deg);">' . $compositionTable[146][$x] . '</th>';
+        }
+        ?>
+      </tr>
       <?php
-      for ($x = 46; $x <= 120; $x++) {
-        echo '<th style="writing-mode: vertical-rl; transform: rotate(180deg);">' . $compositionTable[146][$x] . '</th>';
+      foreach ($compositionTable as $key => $innerArray) {
+        echo '<tr>';
+        echo '<th>' . $key . '</th>';
+        foreach ($innerArray as $keyInner => $value) {
+          echo '<td title="' . ucfirst(defineClass(calcImc($value, $key))) . '&#013;' . $value . ' kg &#013;' . $key . ' cm &#013;' . calcImc($value, $key) . '" style="cursor: pointer;" class="' . defineClass(calcImc($value, $key)) . '"/>';
+        }
+        echo '</tr>';
       }
       ?>
-    </tr>
-    <?php
-    foreach ($compositionTable as $key => $innerArray) {
-      echo '<tr>';
-      echo '<th>' . $key . '</th>';
-      foreach ($innerArray as $keyInner => $value) {
-        echo '<td title="' . ucfirst(defineClass(calcImc($value, $key))) . '&#013;' . $value . ' kg &#013;' . $key . ' cm &#013;' . calcImc($value, $key) . '" style="cursor: pointer;" class="' . defineClass(calcImc($value, $key)) . '"/>';
-      }
-      echo '</tr>';
-    }
-    ?>
 
-  </table>
+    </table>
+  </div>
+  <h4><a href="../index.php">Página Inicial</a></h4>
+  <h4 style="width: 99%; background-color: #CCCCCC; padding: 5px;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
 </body>
 
 </html>
