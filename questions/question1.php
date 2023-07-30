@@ -38,38 +38,31 @@
   </header>
   <main>
     <form action="question1.php" method="get">
-      <fieldset>
+      <fieldset onchange="this.form.submit()">
 
         <legend>Critérios para geração</legend>
 
         <p>Quantidade de elementos
-          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>"
-            onchange="this.form.submit()">
+          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>">
           <label for="qnte">(1 a 15)</label>
         </p>
 
-        <input type="radio" name="criterio" id="text" value="text" <?php echo marcado('text'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="text" value="text" <?php echo marcado('text'); ?>>
         <label for="text">Texto</label> <br>
 
-        <input type="radio" name="criterio" id="password" value="password" <?php echo marcado('password'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="password" value="password" <?php echo marcado('password'); ?>>
         <label for="password">Senha</label> <br>
 
-        <input type="radio" name="criterio" id="button" value="button" <?php echo marcado('button'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="button" value="button" <?php echo marcado('button'); ?>>
         <label for="button">Botão</label> <br>
 
-        <input type="radio" name="criterio" id="radio" value="radio" <?php echo marcado('radio'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="radio" value="radio" <?php echo marcado('radio'); ?>>
         <label for="radio">Rádio</label> <br>
 
-        <input type="radio" name="criterio" id="checkbox" value="checkbox" <?php echo marcado('checkbox'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="checkbox" value="checkbox" <?php echo marcado('checkbox'); ?>>
         <label for="checkbox">Caixa de Seleção</label> <br>
 
-        <input type="radio" name="criterio" id="range" value="range" <?php echo marcado('range'); ?>
-          onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="range" value="range" <?php echo marcado('range'); ?>>
         <label for="range">Faixa</label> <br>
 
       </fieldset>
