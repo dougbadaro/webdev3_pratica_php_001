@@ -83,6 +83,13 @@
     width: 100%;
     padding: 30px;
   }
+
+  @media (max-width: 1400px) {
+    table {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
   </style>
 </head>
 
