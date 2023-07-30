@@ -4,20 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
   <title>Questão 1</title>
   <style>
-    fieldset {
-      margin-bottom: 10px;
-    }
-    p {
-      margin: 0.8px;
-    }
+  body {
+    height: calc(100vh - 16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  fieldset {
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    padding-bottom: 10px;
+  }
+
+  p {
+    padding: 0.8px;
+  }
   </style>
 </head>
 
 <body>
-  <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
-  <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 01</h3>
+  <header>
+    <h3 style="background-color: #CCCCCC;">Desenvolvimento Web</h3>
+    <h3 style="background-color: #000000; color: #FFF;">Trabalho: Questão 01</h3>
+  </header>
   <main>
     <form action="question1.php" method="get">
       <fieldset>
@@ -25,32 +43,37 @@
         <legend>Critérios para geração</legend>
 
         <p>Quantidade de elementos
-          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>" onchange="this.form.submit()">
+          <input type="number" name="qntdelementos" id="qnte" min="1" max="15" value="<?php echo selecionado(); ?>"
+            onchange="this.form.submit()">
           <label for="qnte">(1 a 15)</label>
         </p>
 
-        <input type="radio" name="criterio" id="text" value="text" <?php echo marcado('text'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="text" value="text" <?php echo marcado('text'); ?>
+          onchange="this.form.submit()">
         <label for="text">Texto</label> <br>
 
-        <input type="radio" name="criterio" id="password" value="password" <?php echo marcado('password'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="password" value="password" <?php echo marcado('password'); ?>
+          onchange="this.form.submit()">
         <label for="password">Senha</label> <br>
 
-        <input type="radio" name="criterio" id="button" value="button" <?php echo marcado('button'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="button" value="button" <?php echo marcado('button'); ?>
+          onchange="this.form.submit()">
         <label for="button">Botão</label> <br>
 
-        <input type="radio" name="criterio" id="radio" value="radio" <?php echo marcado('radio'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="radio" value="radio" <?php echo marcado('radio'); ?>
+          onchange="this.form.submit()">
         <label for="radio">Rádio</label> <br>
 
-        <input type="radio" name="criterio" id="checkbox" value="checkbox" <?php echo marcado('checkbox'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="checkbox" value="checkbox" <?php echo marcado('checkbox'); ?>
+          onchange="this.form.submit()">
         <label for="checkbox">Caixa de Seleção</label> <br>
 
-        <input type="radio" name="criterio" id="range" value="range" <?php echo marcado('range'); ?> onchange="this.form.submit()">
+        <input type="radio" name="criterio" id="range" value="range" <?php echo marcado('range'); ?>
+          onchange="this.form.submit()">
         <label for="range">Faixa</label> <br>
 
       </fieldset>
     </form>
-
-    <hr>
 
     <?php
     function marcado($value)
@@ -264,8 +287,15 @@
 
     ?>
 
-    <a href="../index.php">Página inicial</a>
+
   </main>
+  <footer>
+    <hr>
+    <a href="../index.php">
+      <h4 style="background-color: #CCCCCC;">Página Inicial</h4>
+    </a>
+    <h4 style="background-color: #CCCCCC;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
+  </footer>
 </body>
 
 </html>

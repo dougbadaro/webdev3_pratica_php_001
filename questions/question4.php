@@ -6,37 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Questão 4</title>
 
+  <link rel="stylesheet" href="../style.css">
+
   <style>
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
+    body {
+      height: calc(100vh - 16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-  .table-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-  }
+    fieldset {
+      margin-inline-start: 2px;
+      margin-inline-end: 2px;
+      padding-block-start: 0.35em;
+      padding-inline-start: 0.75em;
+      padding-inline-end: 0.75em;
+      padding-block-end: 0.625em;
+      padding-bottom: 10px;
+    }
 
-  table {
-    border-collapse: collapse;
-  }
+    main {
+      display: block;
+      max-width: 100vw;
+      overflow-x: auto;
+    }
 
-  tr {
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    text-align: center;
-  }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
 
-  th {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
+    .table-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    tr {
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      text-align: center;
+    }
+
+    th {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
   </style>
 </head>
 
-<body style="height: 98vh; display: flex; flex-direction: column; justify-content: space-between;">
+<body>
   <?php
   $source = isset($_GET['aporteInicial']) && isset($_GET['periodo']) && $_GET['periodo'] && isset($_GET['rendimento']) && isset($_GET['aporteMensal']);
 
@@ -68,10 +94,12 @@
   }
   ?>
 
-  <div>
-    <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
-    <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 04</h3>
+  <header>
+    <h3 style="background-color: #CCCCCC;">Desenvolvimento Web</h3>
+    <h3 style="background-color: #000000; color: #FFF;">Trabalho: Questão 04</h3>
+  </header>
 
+  <main>
     <fieldset>
       <legend>Parâmetros</legend>
 
@@ -79,8 +107,7 @@
         <div class="form">
           <div>
             <label for="aporteInicial">Aporte inicial (R$):</label>
-            <input type="number" name="aporteInicial" id="aporteInicial" step="0.01" min="0.01" max="999999.99"
-              required>
+            <input type="number" name="aporteInicial" id="aporteInicial" step="0.01" min="0.01" max="999999.99" required>
           </div>
 
           <div>
@@ -128,12 +155,15 @@
       }
       ?>
     </div>
-  </div>
+  </main>
 
-  <div>
-    <h4><a href="../index.php">Página Inicial</a></h4>
-    <h4 style="width: 99%; background-color: #CCCCCC; padding: 5px;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
-  </div>
+  <footer>
+    <hr>
+    <a href="../index.php">
+      <h4 style="background-color: #CCCCCC;">Página Inicial</h4>
+    </a>
+    <h4 style="background-color: #CCCCCC;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
+  </footer>
 </body>
 
 </html>

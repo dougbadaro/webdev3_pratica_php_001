@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Questão 2</title>
 
+  <link rel="stylesheet" href="../style.css">
+
   <style>
   .baixo-muito-grave {
     background-color: #000099;
@@ -70,6 +72,17 @@
   .obesidade-3:hover {
     opacity: 30%;
   }
+
+  main {
+    display: block;
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    padding: 30px;
+  }
   </style>
 </head>
 
@@ -112,11 +125,13 @@
     }
   }
   ?>
-  <div>
-    <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
-    <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 02</h3>
+  <header>
+    <h3 style="background-color: #CCCCCC;">Desenvolvimento Web</h3>
+    <h3 style="background-color: #000000; color: #FFF;">Trabalho: Questão 02</h3>
+  </header>
 
-    <table style="width: 100%; padding: 30px;">
+  <main>
+    <table>
       <tr>
         <th></th>
         <?php
@@ -137,9 +152,14 @@
       ?>
 
     </table>
-  </div>
-  <h4><a href="../index.php">Página Inicial</a></h4>
-  <h4 style="width: 99%; background-color: #CCCCCC; padding: 5px;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
+  </main>
+  <footer>
+    <hr>
+    <a href="../index.php">
+      <h4 style="background-color: #CCCCCC;">Página Inicial</h4>
+    </a>
+    <h4 style="background-color: #CCCCCC;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
+  </footer>
 </body>
 
 </html>
