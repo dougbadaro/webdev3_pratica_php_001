@@ -107,7 +107,7 @@
 
   function calcImc($weight, $height)
   {
-    return number_format(($weight / ($height / 100) ** 2), 2, ',');
+    return number_format(($weight / ($height / 100) ** 2), 2, ',', '.');
   }
 
   function defineClass($imc)
