@@ -60,7 +60,7 @@
       <div class="links">
         <a href="questions/question1.php">Questão 1</a>
         <a href="questions/question2.php">Questão 2</a>
-        <a href="questions/question3.php">Questão 3</a>
+        <a href="questions/question3/question3_a.php">Questão 3</a>
         <a href="questions/question4.php">Questão 4</a>
       </div>
     </div>
