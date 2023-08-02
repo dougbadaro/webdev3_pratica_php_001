@@ -84,6 +84,12 @@
     padding: 30px;
   }
 
+  td,
+  th {
+    height: 20px;
+    width: 20px;
+  }
+
   @media (max-width: 1400px) {
     table {
       padding-right: 0;
