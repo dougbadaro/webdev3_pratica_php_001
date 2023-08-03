@@ -9,56 +9,64 @@
   <link rel="stylesheet" href="../style.css">
 
   <style>
-  body {
-    height: calc(100vh - 16px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 40px;
-  }
+    body {
+      height: calc(100vh - 16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-  fieldset {
-    margin-inline-start: 2px;
-    margin-inline-end: 2px;
-    padding-block-start: 0.35em;
-    padding-inline-start: 0.75em;
-    padding-inline-end: 0.75em;
-    padding-block-end: 0.625em;
-    padding-bottom: 10px;
-  }
+    fieldset {
+      margin-inline-start: 2px;
+      margin-inline-end: 2px;
+      padding-block-start: 0.35em;
+      padding-inline-start: 0.75em;
+      padding-inline-end: 0.75em;
+      padding-block-end: 0.625em;
+      padding-bottom: 10px;
+    }
 
-  main {
-    display: block;
-    max-width: 100vw;
-    overflow-x: auto;
-  }
+    main {
+      display: block;
+      max-width: 100vw;
+      overflow-x: auto;
+    }
 
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
 
-  .table-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-  }
+    .form div {
+      display: flex;
+    }
 
-  table {
-    border-collapse: collapse;
-  }
+    .form div p {
+      margin-left: 10px;
+    }
 
-  tr {
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    text-align: center;
-  }
+    .table-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
 
-  th {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
+    table {
+      border-collapse: collapse;
+    }
+
+    tr {
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      text-align: center;
+    }
+
+    th {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
   </style>
 </head>
 
@@ -129,23 +137,26 @@
         <div class="form">
           <div>
             <label for="aporteInicial">Aporte inicial (R$):</label>
-            <input type="number" name="aporteInicial" id="aporteInicial" step="0.01" min="0.01" max="999999.99"
-              required>
+            <input type="number" name="aporteInicial" id="aporteInicial" step="0.01" min="0.01" max="999999.99" required>
+            <p>[até R$ 999.999,99]</p>
           </div>
 
           <div>
             <label for="periodo">Período (meses)</label>
             <input type="number" name="periodo" id="periodo" min="1" max="480" required>
+            <p>[1 a 480]</p>
           </div>
 
           <div>
             <label for="rendimento">Rendimento mensal (%):</label>
             <input type="number" name="rendimento" id="rendimento" step="0.01" min="0.01" max="20" required>
+            <p>[até 20%]</p>
           </div>
 
           <div>
             <label for="aporteMensal">Aporte mensal: </label>
             <input type="number" name="aporteMensal" id="aporteMensal" step="0.01" min="0.01" max="999999.99" required>
+            <p>[até R$ 999.999,99]</p>
           </div>
         </div>
         <button type="submit">Processar</button>

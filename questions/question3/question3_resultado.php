@@ -2,37 +2,49 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
-    <style>
-        .pergunta {
-            font-weight: bold;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
+  <style>
+  .pergunta {
+    font-weight: bold;
+  }
 
-        ul {
-            list-style-type: none;
-        }
+  ul {
+    list-style-type: none;
+  }
 
-        ul li {
-            counter-increment: contador;
-            position: relative;
-        }
+  ul li {
+    counter-increment: contador;
+    position: relative;
+  }
 
-        ul li:before {
-            content: counter(contador, upper-alpha) ") ";
-            position: absolute;
-            left: -20px;
-        }
-    </style>
-    <title>Questão 3</title>
+  ul li:before {
+    content: counter(contador, upper-alpha) ") ";
+    position: absolute;
+    left: -20px;
+  }
+
+  body {
+    height: calc(100vh - 16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  </style>
+  <title>Questão 3</title>
+
+  <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body>
-    <h3 style="width: 99%; background-color: #CCCCCC; padding: 10px;">Desenvolvimento Web</h3>
-    <h3 style="width: 99%; background-color: #000000; color: #FFF; padding: 10px;">Trabalho: Questão 03</h3>
-    <main>
-        <?php
+  <header>
+    <h3 style="background-color: #CCCCCC;">Desenvolvimento Web</h3>
+    <h3 style="background-color: #000000; color: #FFF;">Trabalho: Questão 01</h3>
+  </header>
+  <main>
+    <?php
         #region Correção
         //Correção questão 1
         function correcao1()
@@ -105,16 +117,22 @@
         #endregion
 
         ?>
-        <p class="pergunta"> Resultado</p>
-        <ol>
-            <li><?php correcao1()?></li>
-            <li><?php correcao2()?></li>
-            <li><?php correcao3()?></li>
-            <li><?php correcao4()?></li>
-        </ol>
+    <p class="pergunta"> Resultado</p>
+    <ol>
+      <li><?php correcao1() ?></li>
+      <li><?php correcao2() ?></li>
+      <li><?php correcao3() ?></li>
+      <li><?php correcao4() ?></li>
+    </ol>
 
-        <a href="../../index.php">Página inicial</a>
-    </main>
+  </main>
+  <footer>
+    <hr>
+    <a href="../../index.php">
+      <h4 style="background-color: #CCCCCC;">Página Inicial</h4>
+    </a>
+    <h4 style="background-color: #CCCCCC;">Douglas Badaró e Lorena Zuba - &copy 2023</h4>
+  </footer>
 </body>
 
 </html>
